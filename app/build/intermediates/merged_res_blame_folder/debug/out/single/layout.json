@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/aguedagg/Desktop/myant/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/aguedagg/Desktop/myant/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/aguedagg/Desktop/myant/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/viewholder_data.xml",
+        "source": "/Users/aguedagg/Desktop/myant/app/src/main/res/layout/viewholder_data.xml"
+    },
+    {
+        "merged": "/Users/aguedagg/Desktop/myant/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_content.xml",
+        "source": "/Users/aguedagg/Desktop/myant/app/src/main/res/layout/activity_content.xml"
+    }
+]

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="constant"
+            type="com.aguedagg.weatherapp.data.Constants" />
+
+        <variable
+            name="model"
+            type="com.aguedagg.weatherapp.data.City" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="?android:selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/listPreferredItemHeight">
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            bind:imagePath="@{model.weatherData.get(0).icon}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.cityName}"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintLeft_toRightOf="@+id/weather_icon"/>
+
+        <TextView
+            android:id="@+id/weather_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.weatherData.get(0).description}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#727272"
+            app:layout_constraintLeft_toLeftOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.temperature}"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#727272"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/humidity"
+            app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+        <TextView
+            android:id="@+id/humidity"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:textSize="24dp"
+            android:text="@{model.humidity}"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

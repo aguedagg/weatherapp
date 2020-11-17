@@ -1,0 +1,108 @@
+com/aguedagg/weatherapp/service/WeatherWorkerFactory.java
+ com.aguedagg.weatherapp.service.WeatherWorkerFactory
+com/aguedagg/weatherapp/api/network/NetworkState.java
+ com.aguedagg.weatherapp.api.network.NetworkState
+com/aguedagg/weatherapp/data/City.java
+ com.aguedagg.weatherapp.data.City
+ com.aguedagg.weatherapp.data.City$MainData
+ com.aguedagg.weatherapp.data.City$TemperatureDeserializer
+ com.aguedagg.weatherapp.data.City$WeatherData
+com/aguedagg/weatherapp/di/module/ViewModelProviderFactory.java
+ com.aguedagg.weatherapp.di.module.ViewModelProviderFactory
+com/aguedagg/weatherapp/api/rest/WeatherRepository.java
+ com.aguedagg.weatherapp.api.rest.WeatherRepository
+com/aguedagg/weatherapp/di/ViewModelBuilder.java
+ com.aguedagg.weatherapp.di.ViewModelBuilder
+com/aguedagg/weatherapp/di/scope/AppScope.java
+ com.aguedagg.weatherapp.di.scope.AppScope
+com/aguedagg/weatherapp/DataBindingTriggerClass.java
+ com.aguedagg.weatherapp.DataBindingTriggerClass
+com/aguedagg/weatherapp/di/AppContextModule.java
+ com.aguedagg.weatherapp.di.AppContextModule
+com/aguedagg/weatherapp/api/base/BaseViewModel.java
+ com.aguedagg.weatherapp.api.base.BaseViewModel
+com/aguedagg/weatherapp/service/WeatherWorker.java
+ com.aguedagg.weatherapp.service.WeatherWorker
+ com.aguedagg.weatherapp.service.WeatherWorker$Factory
+com/aguedagg/weatherapp/service/AppWeatherWorkerFactory.java
+ com.aguedagg.weatherapp.service.AppWeatherWorkerFactory
+com/aguedagg/weatherapp/di/module/WeatherModule.java
+ com.aguedagg.weatherapp.di.module.WeatherModule
+com/aguedagg/weatherapp/data/helper/RoomHelper.java
+ com.aguedagg.weatherapp.data.helper.RoomHelper
+com/aguedagg/weatherapp/data/model/MainConverter.java
+ com.aguedagg.weatherapp.data.model.MainConverter
+ com.aguedagg.weatherapp.data.model.MainConverter$1
+com/aguedagg/weatherapp/data/model/WeatherConverter.java
+ com.aguedagg.weatherapp.data.model.WeatherConverter
+ com.aguedagg.weatherapp.data.model.WeatherConverter$1
+com/aguedagg/weatherapp/api/base/rx/SchedulerProvider.java
+ com.aguedagg.weatherapp.api.base.rx.SchedulerProvider
+com/aguedagg/weatherapp/api/base/BaseViewHolder.java
+ com.aguedagg.weatherapp.api.base.BaseViewHolder
+com/aguedagg/weatherapp/databinding/ViewholderDataBinding.java
+ com.aguedagg.weatherapp.databinding.ViewholderDataBinding
+com/aguedagg/weatherapp/ui/MainAdapter.java
+ com.aguedagg.weatherapp.ui.MainAdapter
+ com.aguedagg.weatherapp.ui.MainAdapter$MainViewHolder
+com/aguedagg/weatherapp/api/base/BaseActivity.java
+ com.aguedagg.weatherapp.api.base.BaseActivity
+com/aguedagg/weatherapp/di/module/WorkerModule.java
+ com.aguedagg.weatherapp.di.module.WorkerModule
+com/aguedagg/weatherapp/BuildConfig.java
+ com.aguedagg.weatherapp.BuildConfig
+com/aguedagg/weatherapp/data/WeatherResponse.java
+ com.aguedagg.weatherapp.data.WeatherResponse
+com/aguedagg/weatherapp/api/base/rx/AppSchedulerProvider.java
+ com.aguedagg.weatherapp.api.base.rx.AppSchedulerProvider
+com/aguedagg/weatherapp/data/database/AppRoomDatabase.java
+ com.aguedagg.weatherapp.data.database.AppRoomDatabase
+com/aguedagg/weatherapp/di/ViewModelKey.java
+ com.aguedagg.weatherapp.di.ViewModelKey
+com/aguedagg/weatherapp/di/AppComponent.java
+ com.aguedagg.weatherapp.di.AppComponent
+ com.aguedagg.weatherapp.di.AppComponent$Builder
+com/aguedagg/weatherapp/api/rest/WeatherApi.java
+ com.aguedagg.weatherapp.api.rest.WeatherApi
+com/aguedagg/weatherapp/data/dao/WeatherModelDao.java
+ com.aguedagg.weatherapp.data.dao.WeatherModelDao
+com/aguedagg/weatherapp/databinding/ActivityContentBinding.java
+ com.aguedagg.weatherapp.databinding.ActivityContentBinding
+com/aguedagg/weatherapp/data/Constants.java
+ com.aguedagg.weatherapp.data.Constants
+com/aguedagg/weatherapp/ui/MainActivity.java
+ com.aguedagg.weatherapp.ui.MainActivity
+ com.aguedagg.weatherapp.ui.MainActivity$1
+com/aguedagg/weatherapp/data/AppDataManager.java
+ com.aguedagg.weatherapp.data.AppDataManager
+com/aguedagg/weatherapp/di/module/RoomModule.java
+ com.aguedagg.weatherapp.di.module.RoomModule
+com/aguedagg/weatherapp/di/module/CustomGlideApp.java
+ com.aguedagg.weatherapp.di.module.CustomGlideApp
+com/aguedagg/weatherapp/di/scope/ActivityScope.java
+ com.aguedagg.weatherapp.di.scope.ActivityScope
+com/aguedagg/weatherapp/di/WorkerKey.java
+ com.aguedagg.weatherapp.di.WorkerKey
+com/aguedagg/weatherapp/ui/MainViewModel.java
+ com.aguedagg.weatherapp.ui.MainViewModel
+com/aguedagg/weatherapp/api/rest/AppWeatherRepository.java
+ com.aguedagg.weatherapp.api.rest.AppWeatherRepository
+com/aguedagg/weatherapp/data/DataManager.java
+ com.aguedagg.weatherapp.data.DataManager
+com/aguedagg/weatherapp/di/ActivityBuilder.java
+ com.aguedagg.weatherapp.di.ActivityBuilder
+com/aguedagg/weatherapp/ui/AuthResource.java
+ com.aguedagg.weatherapp.ui.AuthResource
+com/aguedagg/weatherapp/WeatherApp.java
+ com.aguedagg.weatherapp.WeatherApp
+com/aguedagg/weatherapp/data/model/NestedConverter.java
+ com.aguedagg.weatherapp.data.model.NestedConverter
+ com.aguedagg.weatherapp.data.model.NestedConverter$1
+com/aguedagg/weatherapp/di/module/ActivityModule.java
+ com.aguedagg.weatherapp.di.module.ActivityModule
+com/aguedagg/weatherapp/databinding/ActivityMainBinding.java
+ com.aguedagg.weatherapp.databinding.ActivityMainBinding
+com/aguedagg/weatherapp/di/module/AppModule.java
+ com.aguedagg.weatherapp.di.module.AppModule
+com/aguedagg/weatherapp/data/helper/AppRoomHelper.java
+ com.aguedagg.weatherapp.data.helper.AppRoomHelper
