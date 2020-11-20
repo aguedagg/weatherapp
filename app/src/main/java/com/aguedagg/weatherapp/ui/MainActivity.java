@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.aguedagg.weatherapp.R;
 import com.aguedagg.weatherapp.api.base.BaseActivity;
+import com.aguedagg.weatherapp.api.network.NetworkState;
 import com.aguedagg.weatherapp.databinding.ActivityMainBinding;
 
 import javax.inject.Inject;
@@ -67,13 +68,18 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 switch (listAuthResource.status) {
                     case LOADING:
                         adapter.setEmptySource();
+                        hideErrorMessage();
                         showLoading();
                         break;
                     case SUCCESS:
                         adapter.setSource(listAuthResource.data);
+                        hideErrorMessage();
                         hideLoading();
                         break;
                     case ERROR:
+                        adapter.setEmptySource();
+                        hideLoading();
+                        showErrorMessage();
                         // TODO: show error layout
                         break;
                     default:
@@ -85,10 +91,23 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
     public void showLoading() {
         getViewDataBinding().content.loadingIndicator.setVisibility(View.VISIBLE);
+        getViewDataBinding().content.containerRc.setVisibility(View.GONE);
     }
 
     public void hideLoading() {
         getViewDataBinding().content.loadingIndicator.setVisibility(View.GONE);
+        getViewDataBinding().content.containerRc.setVisibility(View.VISIBLE);
     }
+
+    public void showErrorMessage() {
+        getViewDataBinding().content.containerRc.setVisibility(View.GONE);
+        getViewDataBinding().content.errorMessage.setVisibility(View.VISIBLE);
+    }
+
+    public void hideErrorMessage() {
+        getViewDataBinding().content.containerRc.setVisibility(View.VISIBLE);
+        getViewDataBinding().content.errorMessage.setVisibility(View.GONE);
+    }
+
 }
 

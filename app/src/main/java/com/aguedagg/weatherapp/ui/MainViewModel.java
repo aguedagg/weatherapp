@@ -6,6 +6,7 @@ import com.aguedagg.weatherapp.api.base.BaseViewModel;
 import com.aguedagg.weatherapp.api.base.rx.SchedulerProvider;
 import com.aguedagg.weatherapp.data.City;
 import com.aguedagg.weatherapp.data.DataManager;
+import com.aguedagg.weatherapp.data.WeatherResponse;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.inject.Inject;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import io.reactivex.functions.Consumer;
 
 public class MainViewModel extends BaseViewModel {
 
@@ -41,7 +43,9 @@ public class MainViewModel extends BaseViewModel {
                 .doOnSuccess(weatherModels -> {
                     insertIntoRoom(weatherModels.getCities());
                 }).doOnError(this::setError)
-                .subscribe());
+                .subscribe(response -> { }, throwable -> {
+                    doOnError();
+                }));
     }
 
     void getLocalRepo() {
@@ -80,6 +84,10 @@ public class MainViewModel extends BaseViewModel {
 
     private void doOnLoading() {
         source.postValue(AuthResource.loading(null));
+    }
+
+    private void doOnError() {
+        source.postValue(AuthResource.error("Network error"));
     }
 
 }
