@@ -5,12 +5,16 @@ import android.graphics.drawable.ColorDrawable;
 import android.widget.ImageView;
 
 import com.aguedagg.weatherapp.R;
+import com.aguedagg.weatherapp.data.model.MainConverter;
 import com.aguedagg.weatherapp.data.model.WeatherConverter;
 import com.aguedagg.weatherapp.di.module.GlideApp;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,13 +41,9 @@ public class City {
     @Expose
     private String mCityName;
 
-    //@TypeConverters(MainConverter.class)
-    //@SerializedName("main")
-    //private MainData mMainData;
-
+    @TypeConverters(MainConverter.class)
     @SerializedName("main")
-    @JsonAdapter(TemperatureDeserializer.class)
-    private String temperature;
+    private MainData mMainData;
 
     @TypeConverters(WeatherConverter.class)
     @SerializedName("weather")
@@ -73,19 +73,6 @@ public class City {
         this.mCityName = name;
     }
 
-    public String getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
-    }
-
-    public String getHumidity() {
-        // TODO: remove hardcode, investigate serialization
-        return "34%";//wd.getDescription();
-    }
-
     public List<WeatherData> getWeatherData() {
         return mWeatherData;
     }
@@ -94,13 +81,9 @@ public class City {
         this.mWeatherData = mWeatherData;
     }
 
-    /*public MainData getMainData() {
-        return mMainData;
-    }
+    public MainData getMainData() { return mMainData; }
 
-    public void setMainData(MainData mMainData) {
-        this.mMainData = mMainData;
-    }*/
+    public void setMainData(MainData mMainData) { this.mMainData = mMainData; }
 
     /*
     "main": {
@@ -113,10 +96,13 @@ public class City {
      */
     public static class MainData {
         @SerializedName("temp")
+        @TypeConverters(MainConverter.class)
         private String mTemperature;
         @SerializedName("pressure")
+        @TypeConverters(MainConverter.class)
         private String mPressure;
         @SerializedName("humidity")
+        @TypeConverters(MainConverter.class)
         private String mHumidity;
 
         public String getTemperature() {
@@ -127,16 +113,12 @@ public class City {
             this.mTemperature = temp;
         }
 
-        public String getPressure() {
-            return mPressure;
-        }
+        public String getPressure() { return mPressure; }
 
-        public void setPressure(String pressure) {
-            this.mPressure = pressure;
-        }
+        public void setPressure(String pressure) { this.mPressure = pressure; }
 
         public String getHumidity() {
-            return mHumidity;
+            return mHumidity.concat("%");
         }
 
         public void setHumidity(String humidity) {
@@ -176,13 +158,6 @@ public class City {
         }
     }
 
-    public static class TemperatureDeserializer implements JsonDeserializer<String> {
-        @Override
-        public String deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) {
-            return json.getAsJsonObject().get("temp").getAsString();
-        }
-    }
-
     @BindingAdapter({"imagePath"})
     public static void getIcon(ImageView imageView, String path) {
         path = Constants.BASE_URL_IMAGE + path + "@2x.png";
@@ -195,4 +170,5 @@ public class City {
                 .apply(RequestOptions.circleCropTransform())
                 .into(imageView);
     }
+
 }

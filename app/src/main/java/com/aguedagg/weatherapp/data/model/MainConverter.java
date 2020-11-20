@@ -22,7 +22,7 @@ public class MainConverter {
     }
 
     @TypeConverter
-    public static String convertToString(List<City.MainData> list) {
+    public static String convertToString(City.MainData list) {
         return new Gson().toJson(list);
     }
 
